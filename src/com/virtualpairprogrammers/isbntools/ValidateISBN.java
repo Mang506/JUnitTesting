@@ -5,10 +5,6 @@
  */
 package com.virtualpairprogrammers.isbntools;
 
-/**
- *
- * @author mrubl
- */
 public class ValidateISBN {
     
     private static final int SHORT_ISBN_LENGTH = 10;

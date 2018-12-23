@@ -3,10 +3,7 @@ package com.virtualpairprogrammers.isbntools;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
-/**
- *
- * @author mrubl
- */
+
 public class ValidateISBNTest {
     
     public ValidateISBNTest() {
