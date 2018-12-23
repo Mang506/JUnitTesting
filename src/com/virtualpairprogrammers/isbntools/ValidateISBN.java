@@ -14,22 +14,22 @@ public class ValidateISBN {
     private static final int SHORT_ISBN_LENGTH = 10;
     private static final int LONG_ISBN_LENGTH = 13;
     private static final int SHORT_ISBN_MULTIPLIER = 11;
+    private static final int LONG_ISBN_MULTIPLIER = 10;
     
     public boolean checkISBN(String isbn){
         
         if(isbn.length() == LONG_ISBN_LENGTH){
-            return isThisA13DigitISBN(isbn);
-        }else{
-            if(isbn.length() != SHORT_ISBN_LENGTH){
-                throw new NumberFormatException("ISBN number needs to be 10 digits");
-            }
-
-            return isThisAvalid10DigitISBN(isbn);
+            return isThisALongISBN(isbn);
+        }else if(isbn.length() == SHORT_ISBN_LENGTH){           
+            return isThisAvalidShortISBN(isbn);    
         }
+            
+        throw new NumberFormatException("ISBN number needs to be 10 or 13 digits");
+            
 //        return false;
     }
 
-    private boolean isThisAvalid10DigitISBN(String isbn) throws NumberFormatException {
+    private boolean isThisAvalidShortISBN(String isbn) throws NumberFormatException {
         int total = 0;
         
         for(int i =0; i < SHORT_ISBN_LENGTH; i++){
@@ -45,14 +45,10 @@ public class ValidateISBN {
             }
         }
         
-        if(total % SHORT_ISBN_MULTIPLIER == 0){
-            return true;
-        }else{
-            return false;
-        }
+        return(total % SHORT_ISBN_MULTIPLIER == 0);
     }    
 
-    private boolean isThisA13DigitISBN(String isbn) {
+    private boolean isThisALongISBN(String isbn) {
         int total = 0;
         
         for (int i=0; i < LONG_ISBN_LENGTH; i++){
@@ -63,11 +59,6 @@ public class ValidateISBN {
             }
         }
         
-        if(total% LONG_ISBN_MULTIPLIER == 0){
-            return true;
-        }else{
-            return false;
-        }
+        return(total% LONG_ISBN_MULTIPLIER == 0);
     }
-    private static final int LONG_ISBN_MULTIPLIER = 10;
 }
