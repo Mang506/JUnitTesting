@@ -40,7 +40,7 @@ My main motivation is to have valid tests for work.
 This section is optional if there isn't any special dependencies. Else a bulletlist will suffice, e.g.,
 + [Java](https://www.java.com/en/)
 + [JDK](https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)
-+ [JUnit] (https://junit.org/junit5/)
++ [JUnit](https://junit.org/junit5/)
 
 ## Installation or Getting Started
 
